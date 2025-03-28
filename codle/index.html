@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Number Crack!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Codle</h1>
+            <p class="subtitle">A new 5-digit code every day!</p>
+        </header>
+
+        <div id="game-container">
+            <div id="game-board"></div>
+            <div id="keypad"></div>
+            <div id="game-status"></div>
+        </div>
+
+        <div id="start-modal" class="modal">
+            <div class="modal-content">
+                <h2>Welcome to Daily Number Crack!</h2>
+                <div class="instructions">
+                    <p>Try to guess the secret 5-digit code.</p>
+                    
+                    <div class="example-section">
+                        <p>After each guess, the tiles will change color:</p>
+                        
+                        <div class="example-row">
+                            <div class="example-item">
+                                <div class="example-tile correct-cell">7</div>
+                                <p>Correct digit in correct position</p>
+                            </div>
+                            
+                            <div class="example-item">
+                                <div class="example-tile partial-cell">3</div>
+                                <p>Correct digit in wrong position</p>
+                            </div>
+                            
+                            <div class="example-item">
+                                <div class="example-tile incorrect-cell">9</div>
+                                <p>Digit not in the code</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-section">
+                        <p>Example:</p>
+                        <p class="example-text">If the secret code is <strong>12345</strong> and you guess <strong>13527</strong>:</p>
+                        
+                        <div class="example-guess">
+                            <div class="example-tile correct-cell">1</div>
+                            <div class="example-tile incorrect-cell">3</div>
+                            <div class="example-tile partial-cell">5</div>
+                            <div class="example-tile partial-cell">2</div>
+                            <div class="example-tile incorrect-cell">7</div>
+                        </div>
+                        
+                        <ul class="example-explanation">
+                            <li><span class="digit">1</span> is in the correct position</li>
+                            <li><span class="digit">5</span>&<span class="digit">2</span>are in the code but in the wrong position</li>
+                            <li><span class="digit">3</span>&<span class="digit">7</span>are not in the code</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="daily-rules">
+                        <p><strong>Daily Challenge Rules:</strong></p>
+                        <ul>
+                            <li>A new code is released every day at midnight</li>
+                            <li>Your progress is saved automatically</li>
+                            <li>You can take as many guesses as needed to solve today's puzzle</li>
+                            <li>Come back tomorrow for a new challenge!</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="final-tip">Press Enter or click the Enter button to submit your guess.</p>
+                </div>
+                <button id="start-game">Start Today's Challenge</button>
+            </div>
+        </div>
+
+        <div id="results-modal" class="modal">
+            <div class="modal-content">
+                <button id="close-results-modal" class="close-modal">&times;</button>
+                <h2>Congratulations!</h2>
+                <p>You've cracked today's code: <span id="secret-code-display"></span></p>
+                
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="stat-value" id="current-guesses">0</div>
+                        <div class="stat-label">Today's Guesses</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="average-guesses">0</div>
+                        <div class="stat-label">Average Guesses</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="games-played">0</div>
+                        <div class="stat-label">Games Played</div>
+                    </div>
+                </div>
+                
+                <div class="next-game-container">
+                    <p>Next challenge in:</p>
+                    <div id="countdown-timer" class="countdown">00:00:00</div>
+                </div>
+                
+                <div class="confetti"></div>
+                <button id="view-board">View Board</button>
+                <button id="share-results">Share Results</button>
+            </div>
+        </div>
+        
+        <div id="completed-modal" class="modal">
+            <div class="modal-content">
+                <h2>You've already completed today's challenge!</h2>
+                <p>You solved today's code: <span id="completed-code-display"></span></p>
+                <p>It took you <span id="completed-guesses"></span> guesses.</p>
+                
+                <div class="next-game-container">
+                    <p>Next challenge in:</p>
+                    <div id="completed-countdown-timer" class="countdown">00:00:00</div>
+                </div>
+                
+                <button id="view-completed-board">View Your Solution</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

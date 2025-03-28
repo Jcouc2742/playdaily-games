@@ -1,0 +1,128 @@
+{
+    "default": {
+      "question_part1": "Which of these sports do NOT use a ball? (Eliminate them)",
+      "options": ["Tennis", "Swimming", "Boxing", "Soccer", "Archery", "Basketball", "Fencing", "Golf", "Hockey"],
+      "incorrect_answers": ["Swimming", "Boxing", "Archery", "Fencing", "Hockey"],
+      "correct_answers": ["Tennis", "Soccer", "Basketball", "Golf"],
+      "question_part2": "Which of the remaining sports uses the largest ball?",
+      "correct_answer_part2": "Basketball"
+    },
+    "03-27": {
+      "question_part1": "Which former balon d'or winner...",
+      "options": [
+        "George Weah",
+        "Lev Yashin",
+        "Kaka",
+        "Pavel Nedved",
+        "Thierry Henry",
+        "Sergio Ramos",
+        "Xavi Hernandez",
+        "Paolo Maldini",
+        "David Beckham"
+      ],
+      "incorrect_answers": ["Sergio Ramos", "Thierry Henry", "Xavi Hernandez", "Paolo Maldini", "David Beckham"],
+      "correct_answers": ["George Weah", "Pavel Nedved", "Kaka", "Lev Yashin"],
+      "question_part2": "... has never played at a world cup?",
+      "correct_answer_part2": "George Weah"
+    },
+    "03-28": {
+      "question_part1": "Which FIFA World Cup winning country...",
+      "options": ["Brazil", "Uruguay", "Italy", "Germany", "Belgium", "Mexico", "The Netherlands", "Soviet Union", "Portugal"],
+      "incorrect_answers": ["Greece", "Mexico", "The Netherlands", "Soviet Union", "Portugal"],
+      "correct_answers": ["Brazil", "Uruguay", "Italy", "Germany"],
+      "question_part2": "...has won it the most times?",
+      "correct_answer_part2": "Brazil"
+    },
+    "03-29": {
+      "question_part1": "Which ",
+      "options": [
+        "Basketball",
+        "Cricket",
+        "Volleyball",
+        "American Football",
+        "Water Polo",
+        "Handball",
+        "Squash",
+        "Table Tennis",
+        "Bowling"
+      ],
+      "incorrect_answers": ["Cricket", "American Football", "Squash", "Bowling", "Handball"],
+      "correct_answers": ["Basketball", "Volleyball", "Water Polo", "Table Tennis"],
+      "question_part2": "Which of the remaining sports was first included in the Olympics?",
+      "correct_answer_part2": "Water Polo"
+    },
+    "03-30": {
+      "question_part1": "Which of these are NOT famous basketball players? (Eliminate them)",
+      "options": [
+        "Michael Jordan",
+        "LeBron James",
+        "Cristiano Ronaldo",
+        "Kobe Bryant",
+        "Tiger Woods",
+        "Stephen Curry",
+        "Roger Federer",
+        "Shaquille O'Neal",
+        "Usain Bolt"
+      ],
+      "incorrect_answers": ["Cristiano Ronaldo", "Tiger Woods", "Roger Federer", "Usain Bolt", "Shaquille O'Neal"],
+      "correct_answers": ["Michael Jordan", "LeBron James", "Kobe Bryant", "Stephen Curry"],
+      "question_part2": "Which of the remaining players has won the most NBA championships?",
+      "correct_answer_part2": "Michael Jordan"
+    },
+    "03-31": {
+      "question_part1": "Which of these are NOT ball sports played professionally? (Eliminate them)",
+      "options": [
+        "Tennis",
+        "Dodgeball",
+        "Soccer",
+        "Kickball",
+        "Basketball",
+        "Tetherball",
+        "Volleyball",
+        "Baseball",
+        "Four Square"
+      ],
+      "incorrect_answers": ["Dodgeball", "Kickball", "Tetherball", "Four Square", "Volleyball"],
+      "correct_answers": ["Tennis", "Soccer", "Basketball", "Baseball"],
+      "question_part2": "Which of the remaining sports has the oldest professional league?",
+      "correct_answer_part2": "Baseball"
+    },
+    "04-01": {
+      "question_part1": "Which of these balls are NOT used in Olympic sports? (Eliminate them)",
+      "options": [
+        "Tennis ball",
+        "Bowling ball",
+        "Soccer ball",
+        "Billiard ball",
+        "Volleyball",
+        "Golf ball",
+        "Basketball",
+        "Water polo ball",
+        "Rugby ball"
+      ],
+      "incorrect_answers": ["Bowling ball", "Billiard ball", "Rugby ball", "Golf ball", "Basketball"],
+      "correct_answers": ["Tennis ball", "Soccer ball", "Volleyball", "Water polo ball"],
+      "question_part2": "Which of the remaining balls is the heaviest?",
+      "correct_answer_part2": "Water polo ball"
+    },
+    "04-02": {
+      "question_part1": "Which of these are NOT ball games popular in the United States? (Eliminate them)",
+      "options": [
+        "Baseball",
+        "Cricket",
+        "Basketball",
+        "Rugby",
+        "Football",
+        "Sepak Takraw",
+        "Volleyball",
+        "Kabaddi",
+        "Golf"
+      ],
+      "incorrect_answers": ["Cricket", "Rugby", "Sepak Takraw", "Kabaddi", "Volleyball"],
+      "correct_answers": ["Baseball", "Basketball", "Football", "Golf"],
+      "question_part2": "Which of the remaining sports has the highest average attendance per game?",
+      "correct_answer_part2": "Football"
+    }
+  }
+  
+  
