@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Number Crack!</title>
+    <title>Daily Number Crack</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b37da618af.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
+        <a href="../home.html" id="home-button" aria-label="Home">
+            <i class="fa-solid fa-house"></i>
+        </a>
+            <button class="help-button" id="show-instructions">
+                <i class="fa-solid fa-circle-question"></i>
+            </button>
         <header>
             <h1>Codle</h1>
             <p class="subtitle">A new 5-digit code every day!</p>
@@ -21,6 +28,7 @@
 
         <div id="start-modal" class="modal">
             <div class="modal-content">
+                <button id="close-instructions" class="close-modal">&times;</button>
                 <h2>Welcome to Daily Number Crack!</h2>
                 <div class="instructions">
                     <p>Try to guess the secret 5-digit code.</p>
@@ -126,6 +134,7 @@
                 </div>
                 
                 <button id="view-completed-board">View Your Solution</button>
+                <button id="share-results">Share Results</button>
             </div>
         </div>
     </div>

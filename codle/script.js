@@ -23,6 +23,30 @@ async function initGame() {
   // Check if there's a saved game state
   const savedState = loadGameState()
 
+  // Make sure we're using the correct date format
+  if (savedState) {
+    // Format the date consistently
+    const today = new Date()
+    const formattedToday = today.toISOString().split("T")[0]
+
+    if (savedState.date === formattedToday) {
+      // We have a saved game for today
+      gameState = savedState
+
+      // Ensure the styles array exists for each guess
+      if (gameState.guesses) {
+        gameState.guesses.forEach((guess) => {
+          if (!guess.styles || !Array.isArray(guess.styles)) {
+            // Create default styles array if missing
+            guess.styles = new Array(5).fill("incorrect")
+          }
+        })
+      }
+
+      // Rest of the existing code...
+    }
+  }
+
   if (savedState && savedState.date === todayDate) {
     // We have a saved game for today
     gameState = savedState
@@ -731,7 +755,7 @@ function createConfetti() {
 function shareResults() {
   const text =
     `Daily Number Crack - ${todayDate}\n` +
-    `I solved today's code in ${attempts} guesses!\n` +
+    `I cracked today's code in ${attempts} guesses!\n` +
     `Play at: [Your Website URL]`
 
   if (navigator.share) {

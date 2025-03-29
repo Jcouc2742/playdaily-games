@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Already played button handler
   alreadyPlayedBtn.addEventListener("click", () => {
     // Go back to the quiz page and open the archive
-    window.location.href = "ball.html?showArchive=true"
+    window.location.href = "film.html?showArchive=true"
   })
 
   // Completion button handler
@@ -142,13 +142,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const userScore = document.querySelector("#already-played .stat-value").textContent
 
       // Create share text
-      const shareText = `I scored ${userScore} points on today's Impossi.Ball quiz! Can you beat my score?`
+      const shareText = `I scored ${userScore} points on today's Impossi.Film quiz! Can you beat my score?`
 
       // Check if the Web Share API is available
       if (navigator.share) {
         navigator
           .share({
-            title: "My Impossi.Ball Score",
+            title: "My Impossi.Film Score",
             text: shareText,
             url: window.location.href,
           })
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     alreadyPlayedTitle.textContent = `You've Already Played Todays Quiz!`
 
     // Get and display the user's score for this quiz
-    const scoresData = localStorage.getItem("ballScores")
+    const scoresData = localStorage.getItem("filmScores")
     if (scoresData) {
       const scores = JSON.parse(scoresData)
       if (scores[quizDate] && scores[quizDate].length > 0) {
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to load quiz data
   async function loadQuizData() {
     try {
-      const response = await fetch("ballquestions.json")
+      const response = await fetch("filmquestions.json")
       return await response.json()
     } catch (error) {
       console.error("Error loading questions:", error)
@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
           item.addEventListener("click", () => {
             // If it's not today's quiz, redirect with date parameter
             if (date !== currentDateKey && date !== "default") {
-              window.location.href = `ball.html?date=${date}`
+              window.location.href = `film.html?date=${date}`
             } else {
               // For today's quiz or default, just reload
               window.location.reload()
@@ -505,7 +505,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (dateParam && dateParam !== currentDateKey) return
 
     // Get existing scores
-    const scoresData = localStorage.getItem("ballScores")
+    const scoresData = localStorage.getItem("filmScores")
     const scores = scoresData ? JSON.parse(scoresData) : {}
 
     // Add this score
@@ -515,25 +515,25 @@ document.addEventListener("DOMContentLoaded", () => {
     scores[currentDateKey].push(finalScore)
 
     // Save back to localStorage
-    localStorage.setItem("ballScores", JSON.stringify(scores))
+    localStorage.setItem("filmScores", JSON.stringify(scores))
 
     // Mark this quiz as completed
     const completedQuizzes = getCompletedQuizzes()
     if (!completedQuizzes.includes(currentDateKey)) {
       completedQuizzes.push(currentDateKey)
-      localStorage.setItem("completedBallQuizzes", JSON.stringify(completedQuizzes))
+      localStorage.setItem("completedFilmQuizzes", JSON.stringify(completedQuizzes))
     }
   }
 
   // Function to get completed quizzes
   function getCompletedQuizzes() {
-    const completedData = localStorage.getItem("completedBallQuizzes")
+    const completedData = localStorage.getItem("completedFilmQuizzes")
     return completedData ? JSON.parse(completedData) : []
   }
 
   // Function to calculate average score
   function calculateAverageScore() {
-    const scoresData = localStorage.getItem("ballScores")
+    const scoresData = localStorage.getItem("filmScores")
     if (!scoresData) return 0
 
     const scores = JSON.parse(scoresData)

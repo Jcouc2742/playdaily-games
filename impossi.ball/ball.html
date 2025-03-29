@@ -1,144 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Ultimate Quiz Website!">
-  <meta name="keywords" content="Quiz, ImpossiQuiz, Impossi, Football, World, Impossible">
-  <title>Impossi.Ball - Game</title>
-  <link rel="stylesheet" href="../style.css">
-  <script src="https://kit.fontawesome.com/b37da618af.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Ultimate Ball Quiz!">
+    <meta name="keywords" content="Quiz, ImpossiQuiz, Impossi, Football, Movies, Actors, Impossible">
+    <title>Impossi.Ball - Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b37da618af.js" crossorigin="anonymous"></script>
 </head>
 <body class="quiz-page ball-page">
-  <header>
-      <h1>
-          <a href="../home.html" id="home-button" aria-label="Home">
-              <i class="fa-solid fa-house"></i>
-          </a>
-          Impossi.Ball
-      </h1>
-  </header>
+<div class="container"> 
+    <header>
+        <h1>
+            <a href="../home.html" id="home-button" aria-label="Home">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            Impossi.Ball
+        </h1>
+    </header>
 
-  <div id="game-container">
-      <div id="quiz-screen">
-          
-          <div id="quiz-container">
-              <h3 id="question-part1"></h3>
-              <div id="instructions-container">
-                  <p id="instructions-text">Select 5 impossible answers to eliminate!</p>
-              </div>
-              <div id="question-part2-container" class="hidden">
-                  <h3 id="question-part2"></h3>
-              </div>
-              <div id="options-container"></div>
-          </div>
-          <div class="game-status">
-            <div class="guesses-container">
-                <span>Guesses left: </span>
-                <span id="guesses-left">5</span>
+    <div id="game-container">
+        <div id="quiz-screen">
+            <div class="game-status">
+                <div class="guesses-container">
+                    <span>Guesses left: </span>
+                    <span id="guesses-left">5</span>
+                </div>
+                <div class="score-container">
+                    <span>Score: </span>
+                    <span id="score-display">0</span>
+                </div>
             </div>
-            <div class="score-container">
-                <span>Score: </span>
-                <span id="score-display">0</span>
+            
+            <div id="quiz-container">
+                <h3 id="question-part1"></h3>
+                <div id="instructions-container">
+                    <p id="instructions-text">Select 5 impossible answers to eliminate!</p>
+                </div>
+                <div id="question-part2-container" class="hidden">
+                    <h3 id="question-part2"></h3>
+                </div>
+                <div id="options-container"></div>
+            </div>
+            
+            <div id="archive-container" class="collapsible-container">
+                <button id="archive-toggle" class="collapsible-toggle">
+                    <span>Quiz Archive</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div id="archive-content" class="collapsible-content">
+                    <div id="archive-list" class="archive-grid">
+                        <!-- Archive items will be added here dynamically -->
+                    </div>
+                </div>
             </div>
         </div>
-          <div id="archive-container" class="collapsible-container">
-              <button id="archive-toggle" class="collapsible-toggle">
-                  <span>Quiz Archive</span>
-                  <i class="fa-solid fa-chevron-down"></i>
-              </button>
-              <div id="archive-content" class="collapsible-content">
-                  <div id="archive-list" class="archive-grid">
-                      <!-- Archive items will be added here dynamically -->
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    </div>
 
-  <!-- Points animation container -->
-  <div id="points-animation-container"></div>
+    <!-- Points animation container -->
+    <div id="points-animation-container"></div>
 
-  <!-- Popup component -->
-  <div id="popup" class="popup hidden">
-      <div class="popup-content">
-          <span class="close-btn" id="close-popup">&times;</span>
-          <p id="popup-message"></p>
-          <button id="popup-btn">OK</button>
-      </div>
-  </div>
+    <!-- Popup component -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-btn" id="close-popup">&times;</span>
+            <p id="popup-message"></p>
+            <button id="popup-btn">OK</button>
+        </div>
+    </div>
 
-  <!-- Game completed popup -->
-  <div id="game-completed" class="popup hidden">
-      <div class="popup-content game-completed-content">
-          <span class="close-btn" id="close-game-completed">&times;</span>
-          <h2 id="completion-message" class="completion-message"></h2>
-      
-          <div class="stats-container">
-              <div class="stat-item">
-                  <span class="stat-label">Your Score:</span>
-                  <span id="final-score" class="stat-value">0</span>
-              </div>
-              <div class="stat-item">
-                  <span class="stat-label">Average Score:</span>
-                  <span id="average-score" class="stat-value">0</span>
-              </div>
-              <div class="stat-item">
-                  <span class="stat-label">Next Quiz In:</span>
-                  <span id="countdown-timer" class="stat-value">00:00:00</span>
-              </div>
-          </div>
-      
-          <div class="button-container">
-              <button id="reveal-answers-btn" class="secondary-btn">Reveal Answers</button>
-              <button id="completion-btn" class="completion-btn">Find More Games</button>
-              <button id="shareButton" class="share-btn">Share Results</button>
+    <!-- Game completed popup -->
+    <div id="game-completed" class="popup hidden">
+        <div class="popup-content game-completed-content">
+            <span class="close-btn" id="close-game-completed">&times;</span>
+            <h2 id="completion-message" class="completion-message"></h2>
+        
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-label">Your Score:</span>
+                    <span id="final-score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Average Score:</span>
+                    <span id="average-score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Next Quiz In:</span>
+                    <span id="countdown-timer" class="stat-value">00:00:00</span>
+                </div>
+            </div>
+        
+            <div class="button-container">
+                <button id="reveal-answers-btn" class="secondary-btn">Reveal Answers</button>
+                <button id="completion-btn" class="completion-btn">Find More Games</button>
+            </div>
+        </div>
+    </div>
 
-          </div>
-      </div>
-  </div>
+    <!-- Add a new popup for displaying answers -->
+    <div id="answers-popup" class="popup hidden">
+        <div class="popup-content answers-content">
+            <span class="close-btn" id="close-answers">&times;</span>
+            <h2>Correct Answers</h2>
+            <div id="answers-grid-container"></div>
+        </div>
+    </div>
 
-  <!-- Add a new popup for displaying answers -->
-  <div id="answers-popup" class="popup hidden">
-      <div class="popup-content answers-content">
-          <span class="close-btn" id="close-answers">&times;</span>
-          <h2>Correct Answers</h2>
-          <div id="answers-grid-container"></div>
-      </div>
-  </div>
+    <!-- How to play popup -->
+    <div id="how-to-play" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-btn" id="close-how-to-play">&times;</span>
+            <h2>~How To Play~</h2>
+            <ul id="howlist">
+                <strong>~Part 1~</strong><br><br>Identify the 5 <strong>impossible</strong> answers<br>Each correct elimination will score <strong>100pts</strong><br><br>
+                <strong>~Part 2~</strong><br><br>You will recieve the second part to the question<br>Select the correct answer to score an extra <strong>500pts!</strong><br></ul>
+            <button id="how-to-play-btn">Start Game</button>
+        </div>
+    </div>
 
-  <!-- How to play popup -->
-  <div id="how-to-play" class="popup hidden">
-      <div class="popup-content">
-          <span class="close-btn" id="close-how-to-play">&times;</span>
-          <h2>~How To Play~</h2>
-          <ul id="howlist">
-            <strong>~Part 1~</strong><br><br>Identify the 5 <strong>impossible</strong> answers<br>Each correct elimination will score <strong>100pts</strong><br><br>
-            <strong>~Part 2~</strong><br><br>You will recieve the second part to the question<br>Select the correct answer to score an extra <strong>500pts!</strong><br></ul>
-          <button id="how-to-play-btn">Start Game</button>
-      </div>
-  </div>
+    <!-- Already played popup -->
+    <div id="already-played" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-btn" id="close-already-played">&times;</span>
+            <h2>You've Already Played This Quiz!</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                <span class="stat-label">Your Score:</span>
+                <span id="already-played-score" class="stat-value">0</span>
+            </div> 
+            <div class="stat-item">
+                <span class="stat-label">Next Quiz In:</span>
+                <span id="already-played-countdown" class="stat-value">00:00:00</span>
+            </div>
+        </div>
+        <p>You can find more quizzes in the archive below!</p>
+        <div class="button-container">
+            <button id="already-played-btn" class="completion-btn">Return to Archive</button>
+            <button id="find-more-games-btn" class="completion-btn">Find More Games</button>
+            <button id="shareButton" class="completion-btn">Share Results</button>
+        </div>
+    </div>
+</div>
 
-  <!-- Already played popup -->
-  <div id="already-played" class="popup hidden">
-      <div class="popup-content">
-          <span class="close-btn" id="close-already-played">&times;</span>
-          <h2>You've Already Played This Quiz!</h2>
-          <p>You can find more quizzes in the archive below!</p>
-          <div class="stat-item">
-              <span class="stat-label">Next Quiz In:</span>
-              <span id="already-played-countdown" class="stat-value">00:00:00</span>
-          </div>
-          <div class="button-container">
-              <button id="already-played-btn" class="completion-btn">Return to Archive</button>
-              <button id="completion-btn" class="completion-btn">Find More Games</button>
-              <button id="shareButton" class="share-btn">Share Results</button>
-
-          </div>
-      </div>
-  </div>
-
-  <script src="ball.js"></script>
+    <script src="ball.js"></script>
 </body>
 </html>
 
